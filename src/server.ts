@@ -35,6 +35,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   app.get( "/filteredimage/", async ( req: Request, res: Response ) => {
     // destruct our path params
+    try{
     let { image_url } = req.query;
    // let { image_url } :any = req.query['image_url'];
 
@@ -56,6 +57,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     // delete any localy files
    deleteLocalFiles(filesarray);
    filesarray.length=0;
+  }catch(err){
+    return res.status(403).send(err); 
+  }
   } );
 
 
