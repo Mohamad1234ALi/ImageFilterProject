@@ -42,7 +42,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     // check to make sure the image_url is set
     if (!image_url) { 
       // respond with an error if not
-      return res.status(400).send(`please insert the correct image url`);
+      return res.status(400).send(`please insert the  image url`);
     }
 
     if (typeof image_url !== 'string') return res.status(400).send(`image_url is not a string`); ;
